@@ -1,4 +1,4 @@
-
+// Admin.tsx
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,7 +11,7 @@ import { ptBR } from "date-fns/locale";
 import { useNavigate } from "react-router-dom";
 import { Search } from "lucide-react";
 
-const Admin = () => {
+const AdminPage = () => {
   const [users, setUsers] = useState<User[]>([]);
   const [filteredUsers, setFilteredUsers] = useState<User[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,18 +20,14 @@ const Admin = () => {
   useEffect(() => {
     const loadUsers = () => {
       const allUsers = getUsers();
-      // Sort users by creation date (newest first)
       const sortedUsers = [...allUsers].sort((a, b) => 
         new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
       );
-      
       setUsers(sortedUsers);
       setFilteredUsers(sortedUsers);
     };
     
     loadUsers();
-    
-    // Refresh data every 30 seconds
     const interval = setInterval(loadUsers, 30000);
     return () => clearInterval(interval);
   }, []);
@@ -137,4 +133,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default AdminPage;

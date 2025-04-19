@@ -1,22 +1,15 @@
-
+// Index.tsx
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogHeader, 
-  DialogTitle, 
-  DialogDescription, 
-  DialogFooter 
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import LoginForm from "@/components/ui/login-form";
 import { isAdminPassword } from "@/utils/storage";
 import { toast } from "@/components/ui/use-toast";
 import { getCurrentUser } from "@/utils/storage";
 
-const Index = () => {
+const HomePage = () => {
   const navigate = useNavigate();
   const [isAdminDialogOpen, setIsAdminDialogOpen] = useState(false);
   const [adminPassword, setAdminPassword] = useState("");
@@ -40,7 +33,6 @@ const Index = () => {
   };
 
   useEffect(() => {
-    // Check if user is already logged in
     const currentUser = getCurrentUser();
     if (currentUser) {
       navigate("/menu");
@@ -106,5 +98,4 @@ const Index = () => {
   );
 };
 
-export default Index;
-
+export default HomePage;
