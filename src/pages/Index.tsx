@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -45,10 +46,6 @@ const Index = () => {
       navigate("/menu");
     }
   }, [navigate]);
-
-  const handleAdminAccess = () => {
-    navigate("/admin");
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-green-100">
@@ -110,3 +107,4 @@ const Index = () => {
 };
 
 export default Index;
+
