@@ -59,7 +59,7 @@ export const clearCurrentUser = (): void => {
   localStorage.removeItem(CURRENT_USER_KEY);
 };
 
-export const ADMIN_PASSWORD = 'ndbb'; // Updated admin password
+export const ADMIN_PASSWORD = 'ADMIN123'; // Senha fixa para acesso administrativo
 
 export const isAdminPassword = (password: string): boolean => {
   return password === ADMIN_PASSWORD;
