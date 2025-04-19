@@ -1,4 +1,3 @@
-
 import { User, CartItem } from "@/types";
 
 const USER_STORAGE_KEY = 'secret-menu-users';
@@ -58,4 +57,10 @@ export const clearCart = (): void => {
 
 export const clearCurrentUser = (): void => {
   localStorage.removeItem(CURRENT_USER_KEY);
+};
+
+export const ADMIN_PASSWORD = 'ADMIN123'; // Senha fixa para acesso administrativo
+
+export const isAdminPassword = (password: string): boolean => {
+  return password === ADMIN_PASSWORD;
 };
